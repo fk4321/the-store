@@ -14,7 +14,9 @@ const App = ()=> {
   useEffect(()=> {
     const fetchData = async()=> {
       const response = await axios.get('/api/products');
+      const response_data = response.data
       setProducts(response.data);
+      console.log(response.data.name)
     };
     fetchData();
   }, []);
@@ -39,6 +41,7 @@ const App = ()=> {
   if(!cart){
     return null;
   }
+  console.log(cart)
 
   const createLineItem = async(product)=> {
     const response = await axios.post('/api/lineItems', {
@@ -102,6 +105,8 @@ const App = ()=> {
           products = { products }
           updateOrder = { updateOrder }
           removeFromCart = { removeFromCart }
+          cartItems = { cartItems }
+          updateLineItem = { updateLineItem }
         />
       </div>
     </div>

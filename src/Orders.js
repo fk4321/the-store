@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Orders = ({ orders, products, lineItems })=> {
+  // console.log(prices)
   return (
     <div>
       <h2>Orders</h2>
@@ -15,9 +16,11 @@ const Orders = ({ orders, products, lineItems })=> {
                   {
                     orderLineItems.map( lineItem => {
                       const product = products.find(product => product.id === lineItem.product_id);
+                      
                       return (
                         <li key={ lineItem.id }>
-                          { product ? product.name: '' }
+                          { product ? product.name : '' }
+                          ({ lineItem.quantity })
                         </li>
                       );
                     })

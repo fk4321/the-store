@@ -1,5 +1,5 @@
 # Project Title 
-The Srote Project
+The Store Project
 
 ## Description
 This is an online store
